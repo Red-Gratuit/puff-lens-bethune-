@@ -2,9 +2,9 @@
   "name": "puff-lens-bethune-telegram-bot",
   "version": "1.0.0",
   "description": "Puff Lens/Bethune - Mini App Telegram pour Puffs Premium",
-  "main": "bot.js",
+  "main": "bot.py",
   "scripts": {
-    "start": "node bot.js",
+    "start": "python bot.py",
     "web": "python main.py"
   },
   "dependencies": {

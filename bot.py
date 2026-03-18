@@ -79,7 +79,7 @@ def handle_start(chat_id):
     caption = """✨ BIENVENUE CHEZ PUFF LENS/BETHUNE ✨
 👑 Puffs Premium & Tabacs de Qualité Supérieure 🚬
 
-Envoyez /start pour lancer le bot 🤖 de le garder à jours 🟢."""
+Envoyez /start pour lancer le bot 🤖 et rester connecté 🟢."""
     
     reply_markup = {
         'inline_keyboard': [
@@ -97,6 +97,10 @@ Envoyez /start pour lancer le bot 🤖 de le garder à jours 🟢."""
                 {
                     'text': "📞 Contacter ↗",
                     'url': CONTACT_URL
+                },
+                {
+                    'text': "📷 Instagram ↗",
+                    'url': os.environ.get('INSTAGRAM_URL', 'https://instagram.com/pufflensbethune')
                 }
             ]
         ]
@@ -107,7 +111,7 @@ Envoyez /start pour lancer le bot 🤖 de le garder à jours 🟢."""
     
     if not result or not result.get('ok'):
         # Fallback: envoyer juste le texte
-        send_message(chat_id, f"🌿 **Bienvenue chez Farm Island** 🌿\n\n{caption}", json.dumps(reply_markup))
+        send_message(chat_id, f"✨ **BIENVENUE CHEZ PUFF LENS/BETHUNE** ✨\n\n👑 Puffs Premium & Tabacs de Qualité Supérieure 🚬\n\n🔥 Commandes rapides - Livraison express 🔥", json.dumps(reply_markup))
 
 def handle_help(chat_id):
     """Gérer la commande /help"""
@@ -115,9 +119,10 @@ def handle_help(chat_id):
 /start - Lancer le bot et voir la mini-app
 /help - Voir cette aide
 
-📱 *Mini App:* Tous nos produits et commandes
-📢 *Canal:* Les dernières nouveautés
-📞 *Contact:* Commande directe sur Snapchat"""
+📱 *Mini App:* Puffs Premium & Tabacs de Qualité
+📢 *Canal:* Les dernières nouveautés exclusives
+📞 *Contact:* Commande rapide sur Snapchat
+📷 *Instagram:* Photos et promotions"""
     
     send_message(chat_id, text)
 
@@ -135,7 +140,7 @@ def handle_message(update):
     elif text == '/help':
         handle_help(chat_id)
     else:
-        send_message(chat_id, 'Utilisez /start pour accéder à la mini-app Farm Island 🌿')
+        send_message(chat_id, 'Utilisez /start pour accéder à la mini-app Puff Lens/Bethune 💨')
 
 def bot_polling():
     """Boucle de polling optimisée"""
@@ -169,7 +174,7 @@ def start_bot_thread():
     
     bot_thread = threading.Thread(target=bot_polling, daemon=True)
     bot_thread.start()
-    print("🤖 Bot Telegram démarré en arrière-plan")
+    print("🤖 Puff Lens/Bethune Bot démarré en arrière-plan")
 
 # Point d'entrée pour le bot
 if __name__ == '__main__':
