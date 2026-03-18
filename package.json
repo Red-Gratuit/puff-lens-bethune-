@@ -1,7 +1,7 @@
 {
-  "name": "farm-island-telegram-bot",
+  "name": "puff-lens-bethune-telegram-bot",
   "version": "1.0.0",
-  "description": "Farm Island - Mini App Telegram pour Produits Premium",
+  "description": "Puff Lens/Bethune - Mini App Telegram pour Puffs Premium",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js",

@@ -76,9 +76,8 @@ def get_updates(offset=None):
 
 def handle_start(chat_id):
     """Gérer la commande /start"""
-    caption = """Bienvenue chez Farm Island 🌿
-🌿 et l'ensemble des infos pour commander se trouve 
-sur la Mini-App 📱.
+    caption = """✨ BIENVENUE CHEZ PUFF LENS/BETHUNE ✨
+👑 Puffs Premium & Tabacs de Qualité Supérieure 🚬
 
 Envoyez /start pour lancer le bot 🤖 de le garder à jours 🟢."""
     

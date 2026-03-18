@@ -12,10 +12,10 @@ bot.start(async (ctx) => {
       await ctx.replyWithPhoto(
         { source: 'logo.jpg' }, // Utilise le logo.jpg à la racine du projet
         {
-          caption: `Bienvenue chez Puff Lens/Bethune 💨
-🚬 Découvrez tous nos puffs et tabacs sur la Mini-App 📱.
+          caption: `✨ BIENVENUE CHEZ PUFF LENS/BETHUNE ✨
+� Puffs Premium & Tabacs de Qualité Supérieure �
 
-Envoyez /start pour lancer le bot 🤖 et rester connecté 🟢.`,
+🔥 Commandes rapides - Livraison express �`,
           reply_markup: {
             inline_keyboard: [
               [
@@ -36,10 +36,6 @@ Envoyez /start pour lancer le bot 🤖 et rester connecté 🟢.`,
                 {
                   text: "📷 Instagram ↗", 
                   url: process.env.INSTAGRAM_URL
-                },
-                {
-                  text: "📷 Instagram ↗", 
-                  url: process.env.INSTAGRAM_URL
                 }
               ]
             ]
@@ -49,11 +45,11 @@ Envoyez /start pour lancer le bot 🤖 et rester connecté 🟢.`,
     } catch (photoError) {
       // Si la photo ne fonctionne pas, envoyer juste le texte avec les boutons
       console.log('Photo non trouvée, envoi du texte seulement:', photoError.message);
-      await ctx.reply(`💨 **Bienvenue chez Puff Lens/Bethune** 💨
+      await ctx.reply(`✨ **BIENVENUE CHEZ PUFF LENS/BETHUNE** ✨
 
-🚬 Découvrez tous nos puffs et tabacs sur la Mini-App 📱.
+� Puffs Premium & Tabacs de Qualité Supérieure �
 
-Envoyez /start pour lancer le bot 🤖 de le garder à jours 🟢.`, {
+🔥 Commandes rapides - Livraison express �`, {
         reply_markup: {
           inline_keyboard: [
             [
@@ -89,10 +85,10 @@ bot.help((ctx) => {
 /start - Lancer le bot et voir la mini-app
 /help - Voir cette aide
 
-📱 *Mini App:* Tous nos puffs et commandes
-📢 *Canal:* Les dernières nouveautés
-📞 *Contact:* Commande directe sur Snapchat
-📷 *Instagram:* Photos et actualités`, {
+📱 *Mini App:* Puffs Premium & Tabacs de Qualité
+📢 *Canal:* Les dernières nouveautés exclusives
+📞 *Contact:* Commande rapide sur Snapchat
+📷 *Instagram:* Photos et promotions`, {
     parse_mode: 'Markdown'
   });
 });
