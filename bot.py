@@ -38,6 +38,22 @@ def send_message(chat_id, text, reply_markup=None):
         print(f"Erreur envoi message: {e}")
         return None
 
+def send_photo_url(chat_id, photo_url, caption, reply_markup=None):
+    """Envoyer une photo depuis une URL"""
+    data = {
+        'chat_id': chat_id,
+        'photo': photo_url,
+        'caption': caption,
+        'parse_mode': 'Markdown',
+        'reply_markup': reply_markup
+    }
+    try:
+        response = requests.post(f"{TELEGRAM_API_URL}/sendPhoto", data=data)
+        return response.json()
+    except Exception as e:
+        print(f"Erreur envoi photo URL: {e}")
+        return None
+
 def send_photo(chat_id, photo_path, caption, reply_markup=None):
     """Envoyer une photo avec caption"""
     data = {
@@ -106,7 +122,7 @@ Envoyez /start pour lancer le bot 🤖 et rester connecté 🟢."""
         ]
     }
     
-    # Essayer d'envoyer la photo
+    # Essayer d'envoyer la photo logo.jpg
     result = send_photo(chat_id, 'logo.jpg', caption, json.dumps(reply_markup))
     
     if not result or not result.get('ok'):
