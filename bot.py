@@ -17,7 +17,7 @@ app = Flask(__name__)
 # Configuration du bot
 BOT_TOKEN = os.environ.get('BOT_TOKEN')
 MINI_APP_URL = os.environ.get('MINI_APP_URL')
-CANAL_URL = 'https://t.me/kawscoffe'  # URL directe du canal
+CANAL_URL = 'https://t.me/pufflensbethune'  # URL directe du canal
 CONTACT_URL = os.environ.get('CONTACT_URL')
 TELEGRAM_API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}"
 

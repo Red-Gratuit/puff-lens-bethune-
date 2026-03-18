@@ -12,11 +12,10 @@ bot.start(async (ctx) => {
       await ctx.replyWithPhoto(
         { source: 'logo.jpg' }, // Utilise le logo.jpg à la racine du projet
         {
-          caption: `Bienvenue chez Farm Island 🌿
-🌿 et l'ensemble des infos pour commander se trouve 
-sur la Mini-App 📱.
+          caption: `Bienvenue chez Puff Lens/Bethune 💨
+🚬 Découvrez tous nos puffs et tabacs sur la Mini-App 📱.
 
-Envoyez /start pour lancer le bot 🤖 de le garder à jours 🟢.`,
+Envoyez /start pour lancer le bot 🤖 et rester connecté 🟢.`,
           reply_markup: {
             inline_keyboard: [
               [
@@ -33,6 +32,14 @@ Envoyez /start pour lancer le bot 🤖 de le garder à jours 🟢.`,
                 {
                   text: "📞 Contacter ↗", 
                   url: process.env.CONTACT_URL
+                },
+                {
+                  text: "📷 Instagram ↗", 
+                  url: process.env.INSTAGRAM_URL
+                },
+                {
+                  text: "📷 Instagram ↗", 
+                  url: process.env.INSTAGRAM_URL
                 }
               ]
             ]
@@ -42,10 +49,9 @@ Envoyez /start pour lancer le bot 🤖 de le garder à jours 🟢.`,
     } catch (photoError) {
       // Si la photo ne fonctionne pas, envoyer juste le texte avec les boutons
       console.log('Photo non trouvée, envoi du texte seulement:', photoError.message);
-      await ctx.reply(`🌿 **Bienvenue chez Farm Island** 🌿
+      await ctx.reply(`💨 **Bienvenue chez Puff Lens/Bethune** 💨
 
-🌿 et l'ensemble des infos pour commander se trouve 
-sur la Mini-App 📱.
+🚬 Découvrez tous nos puffs et tabacs sur la Mini-App 📱.
 
 Envoyez /start pour lancer le bot 🤖 de le garder à jours 🟢.`, {
         reply_markup: {
@@ -83,16 +89,17 @@ bot.help((ctx) => {
 /start - Lancer le bot et voir la mini-app
 /help - Voir cette aide
 
-📱 *Mini App:* Tous nos produits et commandes
+📱 *Mini App:* Tous nos puffs et commandes
 📢 *Canal:* Les dernières nouveautés
-📞 *Contact:* Commande directe sur Snapchat`, {
+📞 *Contact:* Commande directe sur Snapchat
+📷 *Instagram:* Photos et actualités`, {
     parse_mode: 'Markdown'
   });
 });
 
 // Handler pour les messages non reconnus
 bot.on('message', (ctx) => {
-  ctx.reply('Utilisez /start pour accéder à la mini-app Farm Island 🌿');
+  ctx.reply('Utilisez /start pour accéder à la mini-app Puff Lens/Bethune 💨');
 });
 
 // Gestion des erreurs
@@ -104,7 +111,7 @@ bot.catch((err, ctx) => {
 // Démarrage du bot
 bot.launch()
   .then(() => {
-    console.log('🤖 Farm Island Bot démarré avec succès!');
+    console.log('🤖 Puff Lens/Bethune Bot démarré avec succès!');
   })
   .catch((err) => {
     console.error('❌ Erreur au démarrage du bot:', err);
