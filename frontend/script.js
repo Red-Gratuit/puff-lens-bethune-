@@ -138,7 +138,7 @@ function showProduct(id) {
     </div>
 
     <p style="margin-top: 25px; text-align: center; font-size: 1.1rem; color: #aaa;">
-      💬 Contacte-moi sur <strong style="color: #667eea;">Snap : lens.bethune62</strong> pour commander ton puff !
+      💬 Contacte-moi sur <strong style="color: #667eea;">Snap : lens.bethune62</strong> pour commander ta puff !
     </p>
   `;
 
@@ -743,7 +743,7 @@ async function addNewProduct() {
   const desc = document.getElementById('new-product-desc').value.trim();
   
   if (!name || !price || !category) {
-    showCustomAlert('⚠️ Champs requis', 'Veuillez remplir le nom, la catégorie et le prix du puff.', 'warning');
+    showCustomAlert('⚠️ Champs requis', 'Veuillez remplir le nom, la catégorie et le prix de ta puff.', 'warning');
     return;
   }
   
@@ -781,7 +781,7 @@ async function addNewProduct() {
     showCustomAlert('✅ Succès', 'Puff ajouté avec succès dans la catégorie ' + category + ' !', 'success');
     refreshProducts();
   } else {
-    showCustomAlert('❌ Erreur', 'Impossible de sauvegarder le puff. Réessayez.', 'error');
+    showCustomAlert('❌ Erreur', 'Impossible de sauvegarder ta puff. Réessayez.', 'error');
   }
 }
 
@@ -792,16 +792,16 @@ async function deleteCustomProduct(id) {
     return;
   }
   
-  showCustomConfirm('🗑️ Supprimer le produit', 'Êtes-vous sûr de vouloir supprimer ce produit ?', async () => {
+  showCustomConfirm('🗑️ Supprimer la puff', 'Êtes-vous sûr de vouloir supprimer ta puff ?', async () => {
     const success = await deleteProductFromServer(id);
     
     if (success) {
       // Recharger les produits depuis le serveur
       await loadCustomProducts();
       refreshProducts();
-      showCustomAlert('✅ Succès', 'Produit supprimé avec succès !', 'success');
+      showCustomAlert('✅ Succès', 'Puff supprimée avec succès !', 'success');
     } else {
-      showCustomAlert('❌ Erreur', 'Impossible de supprimer le produit. Réessayez.', 'error');
+      showCustomAlert('❌ Erreur', 'Impossible de supprimer ta puff. Réessayez.', 'error');
     }
   });
 }
