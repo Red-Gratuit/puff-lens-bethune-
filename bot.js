@@ -104,14 +104,16 @@ bot.catch((err, ctx) => {
   ctx.reply('Une erreur est survenue. Réessayez plus tard.');
 });
 
-// Démarrage du bot
-bot.launch()
-  .then(() => {
-    console.log('🤖 Puff Lens/Bethune Bot démarré avec succès!');
-  })
-  .catch((err) => {
-    console.error('❌ Erreur au démarrage du bot:', err);
-  });
+// Démarrage du bot avec délai pour éviter les conflits
+setTimeout(() => {
+  bot.launch()
+    .then(() => {
+      console.log('🤖 Puff Lens/Bethune Bot démarré avec succès!');
+    })
+    .catch((err) => {
+      console.error('❌ Erreur au démarrage du bot:', err);
+    });
+}, 3000); // Attendre 3 secondes
 
 // Arrêt propre du bot
 process.once('SIGINT', () => bot.stop('SIGINT'));
